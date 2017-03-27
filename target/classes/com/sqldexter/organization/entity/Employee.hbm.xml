@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 26, 2017 5:05:05 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.sqldexter.organization.entity.Employee" table="employee" catalog="ase_db" optimistic-lock="version">
+        <id name="employeeId" type="java.lang.Integer">
+            <column name="Employee_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="firstName" type="string">
+            <column name="First_Name" length="100" not-null="true" />
+        </property>
+        <property name="secondName" type="string">
+            <column name="Second_Name" length="100" not-null="true" />
+        </property>
+        <property name="thirdName" type="string">
+            <column name="Third_Name" length="100" />
+        </property>
+        <property name="dob" type="timestamp">
+            <column name="DOB" length="19" />
+        </property>
+        <property name="joinDate" type="timestamp">
+            <column name="Join_Date" length="19" />
+        </property>
+        <property name="nicNum" type="string">
+            <column name="NIC_Num" length="15" />
+        </property>
+        <property name="contactHome" type="string">
+            <column name="Contact_Home" length="20" />
+        </property>
+        <property name="contactMobile" type="string">
+            <column name="Contact_Mobile" length="20" />
+        </property>
+        <property name="contactOther" type="string">
+            <column name="Contact_Other" length="20" />
+        </property>
+        <property name="addHome1" type="string">
+            <column name="Add_Home_1" length="200" />
+        </property>
+        <property name="addOther1" type="string">
+            <column name="Add_Other_1" length="200" />
+        </property>
+        <property name="employeeTypeId" type="java.lang.Integer">
+            <column name="Employee_Type_ID" />
+        </property>
+        <property name="employeeTypeEffDate" type="timestamp">
+            <column name="Employee_Type_Eff_Date" length="19" />
+        </property>
+        <property name="departmentId" type="java.lang.Integer">
+            <column name="Department_ID" />
+        </property>
+        <property name="departmentEffDate" type="timestamp">
+            <column name="Department_Eff_Date" length="19" />
+        </property>
+        <property name="resignedDate" type="timestamp">
+            <column name="Resigned_Date" length="19" />
+        </property>
+        <property name="activeStatus" type="char">
+            <column name="Active_Status" length="1" not-null="true" />
+        </property>
+        <property name="basicSalary" type="double">
+            <column name="BasicSalary" precision="10" not-null="true" />
+        </property>
+        <property name="incentive" type="java.lang.Double">
+            <column name="Incentive" precision="10" />
+        </property>
+        <property name="attAllowance" type="java.lang.Double">
+            <column name="Att_Allowance" precision="10" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="Created_Date" length="19" not-null="true" />
+        </property>
+        <property name="updatedDate" type="timestamp">
+            <column name="Updated_Date" length="19" />
+        </property>
+        <property name="updatedUserId" type="java.lang.Integer">
+            <column name="Updated_User_ID" />
+        </property>
+        <property name="deleteFlag" type="char">
+            <column name="Delete_Flag" length="1" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

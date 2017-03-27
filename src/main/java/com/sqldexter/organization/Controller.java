@@ -7,7 +7,9 @@ package com.sqldexter.organization;
 
 
 import com.google.gson.Gson;
+import com.sqldexter.organization.entity.Employee;
 import com.sqldexter.organization.entity.User;
+import com.sqldexter.organization.service.EmployeeService;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
@@ -39,6 +41,15 @@ public class Controller {
                 return  json;
             }
         });    
+         
+         get("/employee/viewall",new Route() {
+            @Override
+            public Object handle(Request request, Response response) {
+                         String json = new Gson().toJson(EmployeeService.listallEmployees());
+                         response.type("application/json");
+                return  json;
+            }
+        });    
         
         
         get("/private", (request, response) -> {
@@ -52,6 +63,15 @@ public class Controller {
              return user.toString();
             
         });
+        
+        post("/employee/", (request, response) -> {
+    
+             Employee employee = (Employee) JsonUtil.fromJson(request.body(),Employee.class);
+             return employee.toString();
+            
+        });
+        
+        
 
         get("/news/:section", (request, response) -> {
             response.type("text/xml");

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 26, 2017 5:05:05 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.sqldexter.organization.entity.MonthlySalaryProcessSummary" table="monthly_salary_process_summary" catalog="ase_db" optimistic-lock="version">
+        <id name="processSummaryId" type="java.lang.Integer">
+            <column name="ProcessSummary_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="processDate" type="timestamp">
+            <column name="ProcessDate" length="19" />
+        </property>
+        <property name="processMonth" type="string">
+            <column name="ProcessMonth" length="10" />
+        </property>
+        <property name="employeeId" type="int">
+            <column name="Employee_ID" not-null="true" />
+        </property>
+        <property name="basicSalary" type="java.lang.Double">
+            <column name="Basic_Salary" precision="10" />
+        </property>
+        <property name="totalAllowance" type="java.lang.Double">
+            <column name="Total_Allowance" precision="10" />
+        </property>
+        <property name="totalDeduction" type="java.lang.Double">
+            <column name="Total_Deduction" precision="10" />
+        </property>
+        <property name="totalOverTimeAmount" type="java.lang.Double">
+            <column name="Total_OverTimeAmount" precision="10" />
+        </property>
+        <property name="grossSalary" type="java.lang.Double">
+            <column name="Gross_Salary" precision="10" />
+        </property>
+        <property name="epfAmount" type="java.lang.Double">
+            <column name="EPF_Amount" precision="10" />
+        </property>
+        <property name="etfAmount" type="java.lang.Double">
+            <column name="ETF_Amount" precision="10" />
+        </property>
+        <property name="otherAllowances" type="java.lang.Double">
+            <column name="Other_Allowances" precision="10" />
+        </property>
+        <property name="netSalary" type="java.lang.Double">
+            <column name="Net_Salary" precision="10" />
+        </property>
+    </class>
+</hibernate-mapping>

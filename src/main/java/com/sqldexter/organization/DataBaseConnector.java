@@ -20,7 +20,7 @@ public class DataBaseConnector {
 // Creating SessionFactory using 4.2 version of Hibernate
 
     public static SessionFactory getSessionFactory()  {
-    
+              
             factory = new Configuration().configure().buildSessionFactory();
              return factory;
     }

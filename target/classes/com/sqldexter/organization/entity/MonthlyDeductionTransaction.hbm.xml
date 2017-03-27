@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 26, 2017 5:05:05 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.sqldexter.organization.entity.MonthlyDeductionTransaction" table="monthly_deduction_transaction" catalog="ase_db" optimistic-lock="version">
+        <id name="deductionTranId" type="java.lang.Integer">
+            <column name="DeductionTran_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="deductionId" type="int">
+            <column name="Deduction_ID" not-null="true" />
+        </property>
+        <property name="employeeId" type="int">
+            <column name="Employee_ID" not-null="true" />
+        </property>
+        <property name="tranDate" type="timestamp">
+            <column name="Tran_Date" length="19" />
+        </property>
+        <property name="deductionAmount" type="double">
+            <column name="Deduction_Amount" precision="10" not-null="true" />
+        </property>
+        <property name="activeStatus" type="char">
+            <column name="Active_Status" length="1" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="Created_Date" length="19" not-null="true" />
+        </property>
+        <property name="processedUserId" type="java.lang.Integer">
+            <column name="Processed_User_ID" />
+        </property>
+        <property name="processFlag" type="char">
+            <column name="Process_Flag" length="1" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

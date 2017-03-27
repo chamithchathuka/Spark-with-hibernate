@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 26, 2017 5:05:05 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.sqldexter.organization.entity.MonthlySalaryProcessDetail" table="monthly_salary_process_detail" catalog="ase_db" optimistic-lock="version">
+        <id name="processTranId" type="java.lang.Integer">
+            <column name="ProcessTran_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="processDate" type="timestamp">
+            <column name="ProcessDate" length="19" />
+        </property>
+        <property name="employeeId" type="int">
+            <column name="Employee_ID" not-null="true" />
+        </property>
+        <property name="transactionType" type="string">
+            <column name="Transaction_Type" length="10" not-null="true" />
+        </property>
+        <property name="deductionId" type="int">
+            <column name="Deduction_ID" not-null="true" />
+        </property>
+        <property name="allowanceId" type="int">
+            <column name="Allowance_ID" not-null="true" />
+        </property>
+        <property name="transAmount" type="double">
+            <column name="Trans_Amount" precision="10" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="Created_Date" length="19" not-null="true" />
+        </property>
+        <property name="processedUserId" type="java.lang.Integer">
+            <column name="Processed_User_ID" />
+        </property>
+    </class>
+</hibernate-mapping>

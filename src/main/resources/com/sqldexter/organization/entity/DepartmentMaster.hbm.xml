@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 26, 2017 5:05:05 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.sqldexter.organization.entity.DepartmentMaster" table="department_master" catalog="ase_db" optimistic-lock="version">
+        <id name="departmentId" type="java.lang.Integer">
+            <column name="Department_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="departmentName" type="string">
+            <column name="Department_Name" length="100" not-null="true" />
+        </property>
+        <property name="departmentHeadId" type="int">
+            <column name="DepartmentHead_ID" not-null="true" />
+        </property>
+        <property name="activeStatus" type="char">
+            <column name="Active_Status" length="1" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="Created_Date" length="19" not-null="true" />
+        </property>
+        <property name="updatedDate" type="timestamp">
+            <column name="Updated_Date" length="19" />
+        </property>
+        <property name="updatedUserId" type="java.lang.Integer">
+            <column name="Updated_User_ID" />
+        </property>
+        <property name="deleteFlag" type="char">
+            <column name="Delete_Flag" length="1" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
